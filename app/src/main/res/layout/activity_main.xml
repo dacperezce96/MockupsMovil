@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrainMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/fondo_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/fondo_descriptio"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenido_calendario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/titulo_registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/backgroundtittle"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/wink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/wink"
+                android:textAlignment="textEnd"
+                android:textColor="@color/iceBlue"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/slash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/roboto"
+                android:text="@string/slasH"
+                android:textAlignment="center"
+                android:textColor="@color/hotpink"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/roboto"
+                android:text="@string/alarm"
+                android:textAlignment="textStart"
+                android:textColor="@color/iceBlue"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="88dp"
+            android:contentDescription="@string/icono_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_registrar"
+            app:srcCompat="@drawable/insect" />
+
+        <EditText
+            android:id="@+id/nombre_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:autofillHints=""
+            android:background="@drawable/formfield"
+            android:elevation="50dp"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="@string/labe_celular"
+            android:imeActionLabel="@string/labe_celular"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:minHeight="48dip"
+            android:paddingTop="18dp"
+            android:paddingBottom="28dp"
+            android:shadowColor="@color/iceBlue"
+            android:textColor="@color/texto"
+            android:textColorHint="@color/texto"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.679" />
+
+        <Button
+            android:id="@+id/btn_evento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/labelfondo"
+            android:elevation="50dp"
+            android:text="@string/btn_ingresar"
+            android:textColor="@color/texto"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/texto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/iceBlue"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/btn_ingresar_aqui"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="top"
+            android:includeFontPadding="false"
+            android:paddingBottom="1dp"
+            android:text="@string/btn_registrar_aqui"
+            android:textAllCaps="false"
+            android:textColor="@color/texto"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/o"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_ingresar_aqui"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

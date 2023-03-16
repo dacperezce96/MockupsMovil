@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Wink/Alarm</string>
+    <string name="fondo_descriptio">Textura de fondo</string>
+    <string name="icono_description">icono de aplicacion</string>
+    <string name="wink">WINK</string>
+    <string name="alarm">ALARM</string>
+    <string name="slasH">/</string>
+    <string name="btn_ingresar">INGRESAR</string>
+    <string name="btn_registrar_aqui">Registrate Aquí</string>
+    <string name="btn_registrar">REGISTRATE</string>
+    <string name="btn_ingresar_aqui">Ingresa Aquí</string>
+    <string name="o">o</string>
+    <string name="labe_celular">Numero De Celular</string>
+    <string name="label_nombre">Nombre</string>
+    <string name="label_email">Email</string>
+    <string name="btn_entrar">ENTRAR</string>
+    <string name="info_codigo">Le hemos enviado un mensaje de texto al telefono xxx-xxx-xx-83, escriba el código para iniciar sesión</string>
+    <string name="btn_evento">Añadir evento</string>
+    <string name="mes">FEB</string>
+    <string name="desc_google">boton para conectar a google</string>
+    <string name="dess_select_calendar">spinner para la seleccion de calendarios</string>
+    <string name="dia">Domingo 12</string>
+</resources>

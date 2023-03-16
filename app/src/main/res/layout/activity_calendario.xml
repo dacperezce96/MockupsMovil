@@ -1,0 +1,1551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain_calendario"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendarioActivity">
+
+    <ImageView
+        android:id="@+id/fondo_calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/fondo_descriptio"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenido_calendario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <LinearLayout
+            android:id="@+id/contenido_dia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btn_evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barra_calendar">
+
+            <TextView
+                android:id="@+id/dia2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="20dp"
+                android:drawableBottom="@drawable/line_vector"
+                android:padding="5dp"
+                android:text="@string/dia"
+                android:textColor="@color/white" />
+
+            <ScrollView
+                android:id="@+id/scroll_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/desc_google">
+
+                <LinearLayout
+                    android:id="@+id/lista"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/hora1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="2"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="3"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="4"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="5"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="6"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="7"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="8"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="9"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="10"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="11"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora12"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="12"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="13"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora14"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="14"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora15"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="15"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="16"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora17"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="17"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/barra_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_google"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/icons8_logo_de_google" />
+
+            <TextView
+                android:id="@+id/mes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/backgroundtittle"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:text="@string/mes"
+                android:textColor="@color/iceBlue"
+                android:textSize="25sp" />
+
+            <Spinner
+                android:id="@+id/spinner_calendario"
+                style="@style/Widget.AppCompat.Spinner"
+                android:layout_width="120dp"
+                android:layout_height="?attr/dropdownListPreferredItemHeight"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/spinner_bg"
+                android:contentDescription="@string/dess_select_calendar"
+                android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+                android:minWidth="48dp"
+                android:popupBackground="@android:color/white"
+                android:popupElevation="3dp"
+                android:stateListAnimator="@drawable/spinner_sla"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contenido_semana"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btn_evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barra_calendar">
+
+            <LinearLayout
+                android:id="@+id/semana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/domingo_semana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="DOM\n12"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/lunes_semana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="LUN\n13"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/martes_semana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="MAR\n14"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/miercoles_semana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="MIE\n15"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/jueves_semana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="JUE\n16"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/viernes_semana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="VIE\n17"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/sabado_semana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="SAB\n18"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/scroll_content_semana"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/desc_google">
+
+                <LinearLayout
+                    android:id="@+id/lista_semana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="2"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="3"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="4"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="5"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="6"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="7"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="8"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="9"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="10"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="11"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana12"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="12"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="13"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana14"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="14"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana15"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="15"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="0.05"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="16"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hora_semana17"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numero_semana17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:gravity="center_horizontal"
+                            android:text="17"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/linea_semana17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/line" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_evento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="60dp"
+            android:backgroundTint="@color/labelfondo"
+            android:drawableEnd="@drawable/plus"
+            android:elevation="50dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/btn_evento"
+            android:textColor="@color/texto"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/iceBlue"
+            app:strokeWidth="2dp" />
+
+        <LinearLayout
+            android:id="@+id/contenido_mes"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/btn_evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barra_calendar">
+
+            <LinearLayout
+                android:id="@+id/semana_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="89dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/domingo_semana_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="DOM\n12"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/lunes_semana_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="LUN\n13"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/martes_semana_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="MAR\n14"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/miercoles_semana_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="MIE\n15"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/jueves_semana_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="JUE\n16"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/viernes_semana_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="VIE\n17"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/sabado_semana_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="SAB\n18"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/semana_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="89dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/domingo_semana_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n12"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/lunes_semana_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n13"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/martes_semana_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n14"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/miercoles_semana_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n15"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/jueves_semana_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n16"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/viernes_semana_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n17"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/sabado_semana_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n18"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/semana_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="89dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/domingo_semana_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n12"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/lunes_semana_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n13"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/martes_semana_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n14"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/miercoles_semana_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n15"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/jueves_semana_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n16"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/viernes_semana_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n17"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/sabado_semana_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n18"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/semana_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="89dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/domingo_semana_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n12"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/lunes_semana_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n13"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/martes_semana_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n14"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/miercoles_semana_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n15"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/jueves_semana_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n16"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/viernes_semana_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n17"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/sabado_semana_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n18"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/semana_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="89dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/domingo_semana_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n12"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/lunes_semana_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n13"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/martes_semana_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n14"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/miercoles_semana_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n15"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/jueves_semana_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n16"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/viernes_semana_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n17"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/sabado_semana_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/line"
+                    android:text="\n18"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

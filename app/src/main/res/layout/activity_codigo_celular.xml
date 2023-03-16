@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain_codigo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CodigoCelular">
+
+    <ImageView
+        android:id="@+id/fondo_codigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/fondo_descriptio"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenido_calendario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/titulo_registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/backgroundtittle"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/wink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/wink"
+                android:textAlignment="textEnd"
+                android:textColor="@color/iceBlue"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/slash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/roboto"
+                android:text="@string/slasH"
+                android:textAlignment="center"
+                android:textColor="@color/hotpink"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/roboto"
+                android:text="@string/alarm"
+                android:textAlignment="textStart"
+                android:textColor="@color/iceBlue"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/logo_codigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:contentDescription="@string/icono_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_registrar"
+            app:srcCompat="@drawable/butterfly" />
+
+        <LinearLayout
+            android:id="@+id/input_codigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/texto_codigo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_codigo">
+
+            <EditText
+                android:id="@+id/digit1"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                android:autofillHints=""
+                android:background="@drawable/codigo_shape"
+                android:hint="@string/slasH"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="48dp"
+                android:textAlignment="center"
+                android:textColor="@color/texto"
+                android:textColorHint="@color/texto"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/digit2"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                android:autofillHints=""
+                android:background="@drawable/codigo_shape"
+                android:hint="@string/slasH"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="48dp"
+                android:textAlignment="center"
+                android:textColor="@color/texto"
+                android:textColorHint="@color/texto"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/digit3"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                android:autofillHints=""
+                android:background="@drawable/codigo_shape"
+                android:hint="@string/slasH"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="48dp"
+                android:textAlignment="center"
+                android:textColor="@color/texto"
+                android:textColorHint="@color/texto"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/digit4"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                android:autofillHints=""
+                android:background="@drawable/codigo_shape"
+                android:hint="@string/slasH"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="48dp"
+                android:textAlignment="center"
+                android:textColor="@color/texto"
+                android:textColorHint="@color/texto"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/digit5"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                android:autofillHints=""
+                android:background="@drawable/codigo_shape"
+                android:hint="@string/slasH"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="48dp"
+                android:textAlignment="center"
+                android:textColor="@color/texto"
+                android:textColorHint="@color/texto"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/digit6"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                android:autofillHints=""
+                android:background="@drawable/codigo_shape"
+                android:hint="@string/slasH"
+                android:inputType="number"
+                android:maxLength="1"
+                android:minWidth="48dp"
+                android:textAlignment="center"
+                android:textColor="@color/texto"
+                android:textColorHint="@color/texto"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/texto_codigo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="104dp"
+            android:text="@string/info_codigo"
+            android:textAlignment="center"
+            android:textColor="@color/texto"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_evento"
+            app:layout_constraintEnd_toEndOf="@+id/input_codigo"
+            app:layout_constraintStart_toStartOf="@+id/input_codigo" />
+
+        <Button
+            android:id="@+id/btn_evento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:backgroundTint="@color/labelfondo"
+            android:elevation="50dp"
+            android:text="@string/btn_entrar"
+            android:textColor="@color/texto"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/iceBlue"
+            app:strokeWidth="2dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
