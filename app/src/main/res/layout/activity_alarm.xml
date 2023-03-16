@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain_alarma"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmActivity">
+
+    <ImageView
+        android:id="@+id/fondo_alarma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/fondo_descriptio"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/fondo" />
+
+    <LinearLayout
+        android:id="@+id/contenido_alarma"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondo_alarma">
+
+        <EditText
+            android:id="@+id/input_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/iceBlue"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/titulo_evento"
+            android:textColor="@color/texto"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:id="@+id/selects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner_alarma"
+                style="@style/Widget.AppCompat.Spinner"
+                android:layout_width="120dp"
+                android:layout_height="?attr/dropdownListPreferredItemHeight"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_bg"
+                android:contentDescription="@string/dess_select_calendar"
+                android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+                android:minWidth="48dp"
+                android:popupBackground="@android:color/white"
+                android:popupElevation="3dp"
+                android:stateListAnimator="@drawable/spinner_sla"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinner_tipo"
+                style="@style/Widget.AppCompat.Spinner"
+                android:layout_width="120dp"
+                android:layout_height="?attr/dropdownListPreferredItemHeight"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_bg"
+                android:contentDescription="@string/dess_select_calendar"
+                android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+                android:minWidth="48dp"
+                android:popupBackground="@android:color/white"
+                android:popupElevation="3dp"
+                android:stateListAnimator="@drawable/spinner_sla"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/number_pickers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="clip_horizontal|center_horizontal">
+
+            <NumberPicker
+                android:id="@+id/numberPickerH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/MyNumberPickerStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/puntos"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/puntos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textColor="@color/white"
+                android:textSize="60sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <NumberPicker
+                android:id="@+id/numberPickerM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/MyNumberPickerStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toEndOf="@+id/puntos"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/dias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ToggleButton
+                android:id="@+id/toggleD"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="0"
+                android:background="@drawable/botones_dias"
+                android:text="ToggleButton"
+                android:textColor="@color/iceBlue"
+                android:textOff="D"
+                android:textOn="D" />
+
+            <ToggleButton
+                android:id="@+id/toggleL"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="0"
+                android:background="@drawable/botones_dias"
+                android:text="ToggleButton"
+                android:textColor="@color/iceBlue"
+                android:textOff="L"
+                android:textOn="L" />
+
+            <ToggleButton
+                android:id="@+id/toggleM"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="0"
+                android:background="@drawable/botones_dias"
+                android:text="ToggleButton"
+                android:textColor="@color/iceBlue"
+                android:textOff="M"
+                android:textOn="M" />
+
+            <ToggleButton
+                android:id="@+id/toggleX"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="0"
+                android:background="@drawable/botones_dias"
+                android:text="ToggleButton"
+                android:textColor="@color/iceBlue"
+                android:textOff="X"
+                android:textOn="X" />
+
+            <ToggleButton
+                android:id="@+id/toggleJ"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="0"
+                android:background="@drawable/botones_dias"
+                android:text="ToggleButton"
+                android:textColor="@color/iceBlue"
+                android:textOff="J"
+                android:textOn="J" />
+
+            <ToggleButton
+                android:id="@+id/toggleV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="0"
+                android:background="@drawable/botones_dias"
+                android:text="ToggleButton"
+                android:textColor="@color/iceBlue"
+                android:textOff="V"
+                android:textOn="V" />
+
+            <ToggleButton
+                android:id="@+id/toggleS"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="0"
+                android:background="@drawable/botones_dias"
+                android:text="ToggleButton"
+                android:textColor="@color/iceBlue"
+                android:textOff="S"
+                android:textOn="S" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sonido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/line"
+            android:padding="5dp"
+            android:text="Sonido\nBells"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/dias" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:layout_marginBottom="60dp"
+                android:layout_weight="0"
+                android:backgroundTint="@color/labelfondo"
+                android:elevation="50dp"
+                android:text="@string/btn_cancelar"
+                android:textColor="@color/texto"
+                app:cornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="@color/hotpink"
+                app:strokeWidth="2dp" />
+
+            <Button
+                android:id="@+id/btn_guardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:layout_marginBottom="60dp"
+                android:layout_weight="0"
+                android:backgroundTint="@color/labelfondo"
+                android:elevation="50dp"
+                android:text="@string/btn_guardar"
+                android:textColor="@color/texto"
+                app:cornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="@color/iceBlue"
+                app:strokeWidth="2dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

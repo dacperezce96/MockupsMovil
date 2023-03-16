@@ -20,4 +20,7 @@
     <string name="desc_google">boton para conectar a google</string>
     <string name="dess_select_calendar">spinner para la seleccion de calendarios</string>
     <string name="dia">Domingo 12</string>
+    <string name="titulo_evento">Titulo</string>
+    <string name="btn_guardar">GUARDAR</string>
+    <string name="btn_cancelar">CANCELAR</string>
 </resources>

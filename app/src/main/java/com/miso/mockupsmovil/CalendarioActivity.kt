@@ -12,8 +12,6 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Spinner
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintSet.Layout
 
 class CalendarioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +26,7 @@ class CalendarioActivity : AppCompatActivity() {
         val layoutSemana:LinearLayout = findViewById(R.id.contenido_semana)
         val layoutMes:LinearLayout = findViewById(R.id.contenido_mes)
         val buttonGoogle:ImageButton = findViewById(R.id.btn_google)
+        val buttonEvento:Button = findViewById(R.id.btn_evento)
 
         mySpinner.adapter = adapter
         mySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -55,6 +54,11 @@ class CalendarioActivity : AppCompatActivity() {
 
         buttonGoogle.setOnClickListener {
             openUrlInBrowser("https://accounts.google.com/", this)
+        }
+        buttonEvento.setOnClickListener {
+            val intentRegistrar = Intent(this, AlarmActivity::class.java)
+            intentRegistrar.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivity(intentRegistrar)
         }
     }
 
